@@ -1,0 +1,23 @@
+{
+  "name": "mangobaaz",
+  "version": "0.0.1",
+  "description": "A realtime collaborative code editor",
+  "main": "server.js",
+  "author": "ShaderOX, green-mint",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --ext html,js,css src/server.js",
+    "build": "browserify src/static/js/document.js -o src/static/dist/bundle.js",
+    "deploy": "node src/server.js",
+    "watch": "nodemon --watch src/static/js/document.js --exec npm run build"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
