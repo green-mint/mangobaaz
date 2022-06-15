@@ -36,7 +36,7 @@
 
 {% block bodyContent %}
 <!-- Title page -->
-<section class="how-overlay2 bg-img1" style="background-image: url(images/bg-07.jpg);">
+<section class="how-overlay2 bg-img1" style="background-image: url(images/contact-us.png);">
 	<div class="container">
 		<div class="txt-center p-t-160 p-b-165">
 			<h2 class="txt-l-101 cl0 txt-center p-b-14 respon1">
@@ -44,13 +44,17 @@
 			</h2>
 
 			<span class="txt-m-201 cl0 flex-c-m flex-w">
-				<a href="index.html" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
-					Home
+				<a href="/" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
+					Home&nbsp
 				</a>
 
 				<span>
-					/ Contact
+					/ &nbsp
 				</span>
+
+				<a href="/shop" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
+					Shop
+				</a>
 			</span>
 		</div>
 	</div>
@@ -73,46 +77,47 @@
 			</h3>
 		</div>
 
-		<form id="contact-form" class="validate-form" method="post" action="includes/contact-form.php" name="contact">
+		<form id="contact-form" class="validate-form" method="get" action="" name="contact">
 			<div class="row">
 				<div class="col-sm-6 p-b-30">
-					<div class="validate-input" data-validate="Name is required">
-						<input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text" name="name"
-							placeholder="Your Full Name *">
+					<div class="validate-input">
+						<input id="name" class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+							name="name" placeholder="Your Full Name *">
 					</div>
 				</div>
 
 				<div class="col-sm-6 p-b-30">
-					<div class="validate-input" data-validate="Valid email is: ex@abc.xyz">
-						<input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text" name="email"
-							placeholder="Your Email *">
+					<div class="validate-input" ex@abc.xyz">
+						<input id="email" class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20"
+							type="text" name="email" placeholder="Your Email *">
 					</div>
 				</div>
 
 				<div class="col-sm-6 p-b-30">
 					<div>
-						<input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text" name="address"
-							placeholder="Your Address">
+						<input id="address" class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20"
+							type="text" name="address" placeholder="Your Address">
 					</div>
 				</div>
 
 				<div class="col-sm-6 p-b-30">
-					<div class="validate-input" data-validate="Phone is required">
-						<input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text" name="phone"
-							placeholder="Your Phone *">
+					<div class="validate-input">
+						<input id="phone" class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20"
+							type="text" name="phone" placeholder="Your Phone *">
 					</div>
 				</div>
 
 				<div class="col-12 p-b-30">
-					<div class="validate-input" data-validate="Message is required">
-						<textarea class="txt-s-101 cl3 plh1 size-a-47 bo-all-1 bocl15 focus1 p-rl-20 p-tb-10" name="msg"
-							placeholder="Your Message"></textarea>
+					<div class="validate-input">
+						<textarea id="message"
+							class="txt-s-101 cl3 plh1 size-a-47 bo-all-1 bocl15 focus1 p-rl-20 p-tb-10" name="msg"
+							placeholder="Your Message*"></textarea>
 					</div>
 				</div>
 			</div>
 
 			<div class="flex-c p-t-10">
-				<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04">
+				<button id="send-btn" class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04">
 					Send us now
 				</button>
 			</div>
@@ -122,8 +127,13 @@
 
 <!-- Map -->
 <div class="map">
-	<div class="contact-map size-h-7" id="google_map" data-map-x="19.420967" data-map-y="-99.162822" data-scrollwhell="0"
-		data-draggable="1" data-zoom="15"></div>
+	<!-- <div class="contact-map size-h-7" id="google_map" data-map-x="13.0" data-map-y="12.0" data-scrollwhell="0"
+		data-draggable="1" data-zoom="15"></div> -->
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13285.900826480036!2d72.98823739678959!3d33.64484678141737!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc5180922c44eb86b!2sNational%20University%20of%20Sciences%20%26%20Technology%20(NUST)!5e0!3m2!1sen!2s!4v1655327585246!5m2!1sen!2s"
+		width="1920" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 </div>
 
 <!-- Ccontact -->
@@ -213,10 +223,6 @@
 			</a>
 
 			<a href="#" class="dis-block how2 p-rl-15 m-tb-20">
-				<img class="trans-04" src="images/icons/symbol-08.png" alt="IMG">
-			</a>
-
-			<a href="#" class="dis-block how2 p-rl-15 m-tb-20">
 				<img class="trans-04" src="images/icons/symbol-09.png" alt="IMG">
 			</a>
 
@@ -249,9 +255,9 @@
 
 			<div class="col-md-7 p-tb-15">
 				<form class="flex-w flex-m h-full">
-					<input class="size-a-6 txt-s-106 cl6 plh0 p-rl-30 w-full-sm" type="text" name="email"
+					<input class="cs10a size-a-6 txt-s-106 cl6 plh0 p-rl-30 w-full-sm" type="text" name="email"
 						placeholder="Your email address">
-					<button class="bg10 size-a-5 txt-s-107 cl0 p-rl-15 trans-04 hov-btn2 mt-4 mt-sm-0">
+					<button class="cs10b bg10 size-a-5 txt-s-107 cl0 p-rl-15 trans-04 hov-btn2 mt-4 mt-sm-0">
 						Subscribe
 					</button>
 				</form>
@@ -272,7 +278,8 @@
 				</div>
 
 				<p class="txt-s-101 cl6 size-w-10 p-b-16">
-					There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+					There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+					alteration
 				</p>
 
 				<ul>

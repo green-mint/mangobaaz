@@ -1,6 +1,6 @@
 const firebase = require("../config/db");
-const Product = require("../models/product");
 const firestore = firebase.firestore();
+const Product = require("../models/product");
 
 const addProduct = async (req, res, next) => {
   try {
@@ -29,12 +29,15 @@ const getAllProducts = async (req, res, next) => {
           doc.data().category,
           doc.data().price,
           doc.data().description,
-          doc.data().image
+          doc.data().longdescription,
+          doc.data().images,
+          doc.data().tags
         );
         productsArray.push(product);
       });
-      console.log("object is not empty");
-      res.send(productsArray);
+      console.log(productsArray);
+
+      res.render("./shop.html", { products: productsArray });
     }
   } catch (error) {
     res.status(400).send(error.message);
@@ -48,7 +51,10 @@ const getProduct = async (req, res, next) => {
     const data = await product.get();
     if (!data.exists) {
       res.status(404).send("Product not found");
-    } else res.send(data.data());
+    } else{
+      console.log(data.data());
+      res.render("./product.html", { product: data.data() });
+    }
   } catch (error) {
     res.status(400).send(error.message);
   }

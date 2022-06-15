@@ -20,7 +20,7 @@
 {% block bodyContent %}
 
 <!-- Title page -->
-<section class="how-overlay2 bg-img1" style="background-image: url(/images/bg-07.jpg);">
+<section class="how-overlay2 bg-img1" style="background-image: url(/images/fruits.png);">
 	<div class="container">
 		<div class="txt-center p-t-160 p-b-165">
 			<h2 class="txt-l-101 cl0 txt-center p-b-14 respon1">
@@ -28,14 +28,12 @@
 			</h2>
 
 			<span class="txt-m-201 cl0 flex-c-m flex-w">
-				<a href="/home" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
-					Home
+				<a href="/" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
+					Home&nbsp
 				</a>
-				<span>
-					/ Products
-				</span>
-				<a href="/products" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
-					Products
+				<span>/&nbsp</span>
+				<a href="/contact" class="txt-m-201 cl0 hov-cl10 trans-04 m-r-6">
+					Contact
 				</a>
 			</span>
 		</div>
@@ -47,14 +45,14 @@
 	<div class="container">
 		<div class="flex-w flex-r-m p-b-45 flex-row-rev">
 			<div class="flex-w flex-m p-tb-8">
-				<div class="rs1-select2 bg0 size-w-52 bo-all-1 bocl15 m-tb-7 m-r-15">
+				<!-- <div class="rs1-select2 bg0 size-w-52 bo-all-1 bocl15 m-tb-7 m-r-15">
 					<select class="js-select2" name="sort">
 						<option>Sort by popularity</option>
 						<option>Sort by best sell</option>
 						<option>Sort by special</option>
 					</select>
 					<div class="dropDownSelect2"></div>
-				</div>
+				</div> -->
 
 				<div class="flex-w flex-m m-tb-7">
 					<button class="dis-block lh-00 pos-relative how-icon1 m-r-15 js-show-list">
@@ -77,35 +75,29 @@
 		<!-- Shop grid -->
 		<div class="shop-grid">
 			<div class="row">
+
+				{% for product in products %}
 				<!-- - -->
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-30">
 					<!-- Block1 -->
 					<div class="block1">
 						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-							<img src="/images/product-02.jpg" alt="IMG">
+
+							<img  height="353px" src="{{product.images[0]}}" alt="IMG">
 
 							<div class="block1-content flex-col-c-m p-b-46">
-								<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-									<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-										Strawberry
+								<a href="shop/{{product.id}}" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
+									<a href="shop/{{product.id}}" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
+										{{product.name}}
 									</a>
 
 									<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-										23$
+										Rs. {{product.price}}
 									</span>
 
 									<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-										<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
+										<a href="shop/{{product.id}}" class="block1-icon flex-c-m wrap-pic-max-w">
 											<img src="/images/icons/icon-view.png" alt="ICON">
-										</a>
-
-										<a href="#" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
-											<img src="/images/icons/icon-cart.png" alt="ICON">
-										</a>
-
-										<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
-											<img class="icon-addwish-b1" src="/images/icons/icon-heart.png" alt="ICON">
-											<img class="icon-addedwish-b1" src="/images/icons/icon-heart2.png" alt="ICON">
 										</a>
 									</div>
 							</div>
@@ -113,195 +105,21 @@
 					</div>
 				</div>
 
-				<!-- - -->
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-30">
-					<!-- Block1 -->
-					<div class="block1">
-						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-							<img src="/images/product-03.jpg" alt="IMG">
 
-							<div class="block1-content flex-col-c-m p-b-46">
-								<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-									<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-										Cauliflower
-									</a>
+				{% endfor %}
 
-									<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-										19$
-									</span>
-
-									<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-										<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
-											<img src="/images/icons/icon-view.png" alt="ICON">
-										</a>
-
-										<a href="#" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
-											<img src="/images/icons/icon-cart.png" alt="ICON">
-										</a>
-
-										<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
-											<img class="icon-addwish-b1" src="/images/icons/icon-heart.png" alt="ICON">
-											<img class="icon-addedwish-b1" src="/images/icons/icon-heart2.png" alt="ICON">
-										</a>
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- - -->
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-30">
-					<!-- Block1 -->
-					<div class="block1">
-						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-							<img src="/images/product-04.jpg" alt="IMG">
-
-							<div class="block1-content flex-col-c-m p-b-46">
-								<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-									<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-										Vegetable
-									</a>
-
-									<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-										22$
-									</span>
-
-									<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-										<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
-											<img src="/images/icons/icon-view.png" alt="ICON">
-										</a>
-
-										<a href="#" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
-											<img src="/images/icons/icon-cart.png" alt="ICON">
-										</a>
-
-										<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
-											<img class="icon-addwish-b1" src="/images/icons/icon-heart.png" alt="ICON">
-											<img class="icon-addedwish-b1" src="/images/icons/icon-heart2.png" alt="ICON">
-										</a>
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- - -->
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-30">
-					<!-- Block1 -->
-					<div class="block1">
-						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-							<img src="/images/product-05.jpg" alt="IMG">
-
-							<div class="block1-content flex-col-c-m p-b-46">
-								<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-									<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-										Bell pepper
-									</a>
-
-									<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-										12$
-									</span>
-
-									<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-										<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
-											<img src="/images/icons/icon-view.png" alt="ICON">
-										</a>
-
-										<a href="#" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
-											<img src="/images/icons/icon-cart.png" alt="ICON">
-										</a>
-
-										<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
-											<img class="icon-addwish-b1" src="/images/icons/icon-heart.png" alt="ICON">
-											<img class="icon-addedwish-b1" src="/images/icons/icon-heart2.png" alt="ICON">
-										</a>
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- - -->
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-30">
-					<!-- Block1 -->
-					<div class="block1">
-						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-							<img src="/images/product-06.jpg" alt="IMG">
-
-							<div class="block1-content flex-col-c-m p-b-46">
-								<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-									<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-										Beetroot
-									</a>
-
-									<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-										9$
-									</span>
-
-									<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-										<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
-											<img src="/images/icons/icon-view.png" alt="ICON">
-										</a>
-
-										<a href="#" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
-											<img src="/images/icons/icon-cart.png" alt="ICON">
-										</a>
-
-										<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
-											<img class="icon-addwish-b1" src="/images/icons/icon-heart.png" alt="ICON">
-											<img class="icon-addedwish-b1" src="/images/icons/icon-heart2.png" alt="ICON">
-										</a>
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!--  -->
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-30">
-					<!-- Block1 -->
-					<div class="block1">
-						<div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
-							<img src="/images/product-07.jpg" alt="IMG">
-
-							<div class="block1-content flex-col-c-m p-b-46">
-								<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-									<a href="product-single.html" class="txt-m-103 cl3 txt-center hov-cl10 trans-04 js-name-b1">
-										Cabbage
-									</a>
-
-									<span class="block1-content-more txt-m-104 cl9 p-t-21 trans-04">
-										15$
-									</span>
-
-									<div class="block1-wrap-icon flex-c-m flex-w trans-05">
-										<a href="product-single.html" class="block1-icon flex-c-m wrap-pic-max-w">
-											<img src="/images/icons/icon-view.png" alt="ICON">
-										</a>
-
-										<a href="#" class="block1-icon flex-c-m wrap-pic-max-w js-addcart-b1">
-											<img src="/images/icons/icon-cart.png" alt="ICON">
-										</a>
-
-										<a href="wishlist.html" class="block1-icon flex-c-m wrap-pic-max-w js-addwish-b1">
-											<img class="icon-addwish-b1" src="/images/icons/icon-heart.png" alt="ICON">
-											<img class="icon-addedwish-b1" src="/images/icons/icon-heart2.png" alt="ICON">
-										</a>
-									</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
+								
 		<!-- Shop list -->
 		<div class="shop-list dis-none">
+		<!-- <div class="shop-list "> -->
+			
+
+				{% for product in products %}
+
 			<div class="row p-b-30">
 				<div class="col-sm-5 col-md-4 col-lg-3">
 					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-37.jpg" alt="PRODUCT">
+						<img src="{{product.image}}" alt="PRODUCT">
 					</a>
 				</div>
 
@@ -309,7 +127,7 @@
 					<div class="p-t-5 p-b-20">
 						<div class="flex-w flex-sb-m">
 							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Strawberry
+								{{product.name}}
 							</a>
 
 							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
@@ -320,15 +138,11 @@
 						</div>
 
 						<span class="txt-m-117 cl9">
-							21$
+							Rs. {{product.price}}
 						</span>
 
 						<p class="txt-s-101 cl6 p-t-18">
-							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-							vitae dicta sunt explicabo.=======Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-							accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-							quasi architecto beatae vitae dicta sunt explicabo.
+							{{product.description}}
 						</p>
 
 						<div class="flex-w p-t-29">
@@ -340,47 +154,7 @@
 				</div>
 			</div>
 
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-38.jpg" alt="PRODUCT">
-					</a>
-				</div>
-
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Red pumpkin
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							15$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-							id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-							fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-							deserunt mollit anim id est laborum.
-						</p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 
 			<div class="row p-b-30">
 				<div class="col-sm-5 col-md-4 col-lg-3">
@@ -466,256 +240,7 @@
 				</div>
 			</div>
 
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-41.jpg" alt="PRODUCT">
-					</a>
-				</div>
 
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Bell pepper
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							12$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-							was born and I will give you a complete account of the system, and expound the actual teachings of the
-							great.=======But I must explain to you how all this mistaken idea of denouncing pleasure and praising
-							pain was born and I will give you a complete account of the system, and expound the actual teachings of
-							the great.
-						</p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-42.jpg" alt="PRODUCT">
-					</a>
-				</div>
-
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Beetroot
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							9$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because
-							those who do not know how to pursue pleasure rationally encounter consequences that are extremely
-							painful. Nor again is there anyone who loves or pursues or desires to obtain.=======No one rejects,
-							dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to
-							pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone
-							who loves or pursues or desires to obtain.
-						</p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-43.jpg" alt="PRODUCT">
-					</a>
-				</div>
-
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Cabbage
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							15$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							To take a trivial example, which of us ever undertakes laborious physical exercise, except to
-							obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a
-							pleasure that has no annoying consequences.=======To take a trivial example, which of us ever undertakes
-							laborious physical exercise, except to obtain some advantage from it? But who has any right to find
-							fault with a man who chooses to enjoy a pleasure that has no annoying consequences.
-						</p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-44.jpg" alt="PRODUCT">
-					</a>
-				</div>
-
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Tomato
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							38$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-							voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate
-							non provident, similique sunt in culpa qui officia deserunt mollitia animi.=======At vero eos et
-							accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-							corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-							sunt in culpa qui officia deserunt mollitia animi. </p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-45.jpg" alt="PRODUCT">
-					</a>
-				</div>
-
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Onion
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							9$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-							eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-							assumenda est, omnis dolor repellendus.
-						</p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row p-b-30">
-				<div class="col-sm-5 col-md-4 col-lg-3">
-					<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 hov8 trans-04">
-						<img src="/images/product-46.jpg" alt="PRODUCT">
-					</a>
-				</div>
-
-				<div class="col-sm-7 col-md-8 col-lg-9">
-					<div class="p-t-5 p-b-20">
-						<div class="flex-w flex-sb-m">
-							<a href="product-single.html" class="txt-m-120 cl3 hov-cl10 trans-04 m-r-20 js-name1">
-								Eggplant
-							</a>
-
-							<a href="wishlist.html" class="lh-00 pos-relative how-icon1 m-tb-15 js-addwish1">
-								<img class="icon-main trans-04" src="/images/icons/icon-heart-color.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-								<img class="ab-t-l icon-hov trans-04" src="/images/icons/icon-heart-color2.png" alt="ICON">
-							</a>
-						</div>
-
-						<span class="txt-m-117 cl9">
-							18$
-						</span>
-
-						<p class="txt-s-101 cl6 p-t-18">
-							Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
-							et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-							delectus, ut aut reiciendis voluptatibus.=======Temporibus autem quibusdam et aut officiis debitis aut
-							rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-							earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus.
-						</p>
-
-						<div class="flex-w p-t-29">
-							<button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04 js-addcart1">
-								Add to cart
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
 	</div>
@@ -740,9 +265,9 @@
 
 			<div class="col-md-7 p-tb-15">
 				<form class="flex-w flex-m h-full">
-					<input class="size-a-6 txt-s-106 cl6 plh0 p-rl-30 w-full-sm" type="text" name="email"
+					<input class="cs10a size-a-6 txt-s-106 cl6 plh0 p-rl-30 w-full-sm" type="text" name="email"
 						placeholder="Your email address">
-					<button class="bg10 size-a-5 txt-s-107 cl0 p-rl-15 trans-04 hov-btn2 mt-4 mt-sm-0">
+					<button class="cs10b bg10 size-a-5 txt-s-107 cl0 p-rl-15 trans-04 hov-btn2 mt-4 mt-sm-0">
 						Subscribe
 					</button>
 				</form>
