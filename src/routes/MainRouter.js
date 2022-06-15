@@ -1,17 +1,22 @@
 const router = require("express").Router();
-const { addProduct,
+const {
+  addProduct,
   getAllProducts,
   getProduct,
   updateProduct,
-  deleteProduct } = require("../controllers/productController");
+  deleteProduct,
+} = require("../controllers/productController");
 
-  
 router.post("/", addProduct);
 router.get("/test", getAllProducts);
+// router.get("/test", (req, res) => {
+//   console.log("test route");
+//   res.send("test route");
+// });
+
 router.get("/product/:id", getProduct);
 // router.put("/:id", updateProduct);
 // router.delete("/:id", deleteProduct);
-
 
 router.get("/", (req, res) => {
   res.render("home.html");
@@ -20,8 +25,6 @@ router.get("/", (req, res) => {
 router.get("/home", (req, res) => {
   res.render("home.html");
 });
-
-
 
 router.get("/shop", (req, res) => {
   res.render("shop.html");
