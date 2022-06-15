@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Home 02</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" 		 href="/images/icons/favicon.png"/>
+	<link rel="icon" type="image/png" href="/images/icons/favicon.png" />
 
 	{% block stylesheets %} {% endblock %}
 
 
 </head>
+
 <body class="animsition">
 
 	<!-- Header -->
@@ -19,12 +21,12 @@
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop">
 					<div class="left-header">
-						<!-- Logo desktop -->		
+						<!-- Logo desktop -->
 						<div class="logo">
 							<a href="index.html"><img src="/images/icons/logo-01.png" alt="IMG-LOGO"></a>
-						</div>	
+						</div>
 					</div>
-						
+
 					<div class="center-header">
 						<!-- Menu desktop -->
 						<div class="menu-desktop">
@@ -79,7 +81,7 @@
 								</li> -->
 
 								<li>
-									<a href="gallery-01.html">Gallery</a>
+									<a href="/gallery-01">Gallery</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="gallery-01.html">Gallery 1</a></li>
 										<li><a href="gallery-02.html">Gallery 2</a></li>
@@ -87,7 +89,7 @@
 								</li>
 
 								<li>
-									<a href="contact-01.html">Contact</a>
+									<a href="/contact-01">Contact</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="contact-01.html">Contact 1</a></li>
 										<li><a href="contact-02.html">Contact 2</a></li>
@@ -96,7 +98,7 @@
 							</ul>
 						</div>
 					</div>
-						
+
 					<div class="right-header">
 						<!-- Icon header -->
 						<div class="wrap-icon-header flex-w flex-r-m h-full wrap-menu-click p-t-8">
@@ -105,7 +107,7 @@
 									<img src="/images/icons/icon-search.png" alt="SEARCH">
 								</div>
 							</div>
-								
+
 							<div class="wrap-cart-header h-full flex-m m-l-10 menu-click">
 								<div class="icon-header-item flex-c-m trans-04 icon-header-noti" data-notify="2">
 									<img src="/images/icons/icon-cart-2.png" alt="CART">
@@ -117,7 +119,8 @@
 											<!-- cart header item -->
 											<div class="flex-w flex-str m-b-25">
 												<div class="size-w-15 flex-w flex-t">
-													<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
+													<a href="product-single.html"
+														class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
 														<img src="/images/item-cart-01.jpg" alt="PRODUCT">
 													</a>
 
@@ -146,7 +149,8 @@
 											<!-- cart header item -->
 											<div class="flex-w flex-str m-b-25">
 												<div class="size-w-15 flex-w flex-t">
-													<a href="product-single.html" class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
+													<a href="product-single.html"
+														class="wrap-pic-w bo-all-1 bocl12 size-w-16 hov3 trans-04 m-r-14">
 														<img src="/images/item-cart-02.jpg" alt="PRODUCT">
 													</a>
 
@@ -173,7 +177,7 @@
 											</div>
 										</div>
 									</div>
-										
+
 
 									<div class="flex-w flex-sb-m p-t-22 p-b-12">
 										<span class="txt-m-103 cl3 p-r-20">
@@ -194,21 +198,21 @@
 											48$
 										</span>
 									</div>
-									
+
 									<a href="checkout.html" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
 										check out
-									</a>	
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</nav>
-			</div>	
+			</div>
 		</div>
 
 		<!-- Header Mobile -->
 		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->		
+			<!-- Logo moblie -->
 			<div class="logo-mobile">
 				<a href="index.html"><img src="/images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
@@ -309,7 +313,7 @@
 
 						<a href="checkout.html" class="flex-c-m size-a-8 bg10 txt-s-105 cl13 hov-btn2 trans-04">
 							check out
-						</a>	
+						</a>
 					</div>
 				</div>
 			</div>
@@ -404,7 +408,7 @@
 				</li>
 
 				<li>
-					<a href="contact-01.html">Contact</a>
+					<a href="/contact-01">Contact</a>
 					<ul class="sub-menu-m">
 						<li><a href="contact-01.html">Contact 1</a></li>
 						<li><a href="contact-02.html">Contact 2</a></li>
@@ -422,7 +426,7 @@
 			<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
 				<span class="lnr lnr-cross"></span>
 			</button>
-			
+
 			<div class="container-search-header">
 				<form class="wrap-search-header flex-w">
 					<button class="flex-c-m trans-04">
@@ -433,10 +437,10 @@
 			</div>
 		</div>
 	</header>
-	
-  {% block bodyContent %} {% endblock %}
 
-  	<!-- Back to top -->
+	{% block bodyContent %} {% endblock %}
+
+	<!-- Back to top -->
 	<div class="btn-back-to-top bg0-hov" id="myBtn">
 		<span class="symbol-btn-back-to-top">
 			<span class="lnr lnr-chevron-up"></span>
@@ -448,4 +452,5 @@
 
 
 </body>
+
 </html>
