@@ -23,7 +23,5 @@ nunjucks.configure(["src/views/", "src/static/"], {
 
 app.use("/", routes)
 
-console.log('Connected to API KEY: ' + JSON.stringify(config.apiKey));
-
 module.exports.app = app;
 

@@ -20,7 +20,6 @@ const getAllProducts = async (req, res, next) => {
     const productsArray = [];
     if (data.empty) {
       res.send("No products found");
-      console.log("object is empty");
     } else {
       data.forEach(doc => {
         const product = new Product(
@@ -35,7 +34,6 @@ const getAllProducts = async (req, res, next) => {
         );
         productsArray.push(product);
       });
-      console.log(productsArray);
 
       res.render("./shop.html", { products: productsArray });
     }
@@ -52,7 +50,6 @@ const getProduct = async (req, res, next) => {
     if (!data.exists) {
       res.status(404).send("Product not found");
     } else{
-      console.log(data.data());
       res.render("./product.html", { product: data.data() });
     }
   } catch (error) {

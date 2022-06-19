@@ -410,7 +410,6 @@
     /* Newsletter subscription */
     $(".cs10b").click(function () {
         var email = $(".cs10a").val();
-        console.log(email);
         if (validateEmail(email))
             alert("You have subscribed to our newsletter!");
         else

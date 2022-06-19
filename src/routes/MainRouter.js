@@ -19,7 +19,6 @@ router.post("/", async function(req,res){
     const productsArray = [];
     if (data.empty) {
       res.send("No products found");
-      console.log("object is empty");
     } else {
       data.forEach(doc => {
         const product = new Product(
@@ -43,14 +42,8 @@ router.post("/", async function(req,res){
   }
 });
 router.get("/shop", getAllProducts);
-// router.get("/test", (req, res) => {
-//   console.log("test route");
-//   res.send("test route");
-// });
 
 router.get("/product/:id", getProduct);
-// router.put("/:id", updateProduct);
-// router.delete("/:id", deleteProduct);
 
 router.get("/", (req, res) => {
   res.render("home.html");

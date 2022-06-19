@@ -115,7 +115,6 @@ $('#send-btn').click(function () {
     message = $('#message').val();
     phone = $('#phone').val();
     address = $('#address').val();
-    console.log(fname, email, message, phone, address);
     if (fname == '' || email == '' || phone == '' || message == '') {
         alert("Please fill all the required fields!");
     }
