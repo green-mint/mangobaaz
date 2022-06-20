@@ -5,6 +5,11 @@
   "main": "server.js",
   "author": "ShaderOX, green-mint",
   "license": "MIT",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x",
+    "yarn": "1.x"
+  },
   "scripts": {
     "start": "nodemon --ext html,js,css src/server.js",
     "build": "browserify src/static/js/document.js -o src/static/dist/bundle.js",
