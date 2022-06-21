@@ -12,11 +12,12 @@
   },
   "scripts": {
     "start": "nodemon --ext html,js,css src/server.js",
-    "build": "browserify src/static/js/document.js -o src/static/dist/bundle.js",
+    "build": "browserify src/server.js -o src/static/dist/bundle.js",
     "deploy": "node src/server.js",
-    "watch": "nodemon --watch src/static/js/document.js --exec npm run build"
+    "watch": "nodemon --watch src/server.js --exec npm run build"
   },
   "dependencies": {
+    "async_hooks": "^1.0.0",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
